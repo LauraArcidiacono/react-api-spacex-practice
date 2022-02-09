@@ -6,7 +6,6 @@ import ListOfLaunches from '../components/ListOfLaunches';
 function Home() {
   return (
     <Fragment>
-      <h1>Home</h1>
       <FilterInput />
       <ListOfLaunches />
     </Fragment>

@@ -1,15 +1,20 @@
-import { Fragment } from 'react/cjs/react.production.min';
 import React from 'react';
-import FilterInput from './components/FilterInput';
-import ListOfLaunches from './components/ListOfLaunches';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Details from './pages/Details';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <Fragment>
+    <BrowserRouter>
       <h1>Search SpaceX Launches</h1>
-      <FilterInput />
-      <ListOfLaunches />
-    </Fragment>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/launcheDetails/:id" element={<Details />} />
+        <Route path="*" exact element={<NotFound />} />
+      </Routes>
+
+    </BrowserRouter>
 
   );
 }

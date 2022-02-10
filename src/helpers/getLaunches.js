@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const getLaunches = (key = '', value = '') => {
   let apiURL = 'https://api.spacexdata.com/v3/launches/';
 

@@ -1,5 +1,4 @@
 /* eslint-disable react/require-default-props */
-/* eslint-disable no-console */
 import propTypes from 'prop-types';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -9,8 +8,6 @@ import Loading from './Loading';
 
 function ListOfLaunches({ filterKey, filterValue }) {
   const { pastLaunches, loading } = useFilter(filterKey, filterValue);
-
-  console.log(pastLaunches);
 
   if (loading) return <Loading />;
 

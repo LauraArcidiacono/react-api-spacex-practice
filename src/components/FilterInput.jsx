@@ -1,19 +1,12 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable no-console */
-import React, { useState } from 'react';
+import React from 'react';
 import { Fragment } from 'react/cjs/react.development';
+import PropTypes from 'prop-types';
 
-function FilterInput() {
-  const [keyword, setKeyword] = useState();
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(keyword);
-  };
-
-  const handleChange = (event) => {
-    setKeyword(event.target.value);
-  };
-
+function FilterInput({
+  handleChange, handleSubmit
+}) {
   return (
     <Fragment>
       <h2>Search</h2>
@@ -22,7 +15,6 @@ function FilterInput() {
           name="searchLaunch"
           type="text"
           placeholder="Search launch..."
-          value={keyword}
           onChange={handleChange}
         />
         <button type="button">Search Now</button>
@@ -31,3 +23,8 @@ function FilterInput() {
   );
 }
 export default FilterInput;
+
+FilterInput.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired
+};

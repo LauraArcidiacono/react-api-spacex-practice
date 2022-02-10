@@ -1,25 +1,15 @@
 /* eslint-disable no-console */
-import React, { useState } from 'react';
+import React from 'react';
 import { Fragment } from 'react/cjs/react.development';
 import FilterInput from '../components/FilterInput';
 import ListOfLaunches from '../components/ListOfLaunches';
+import useKeyValue from '../hook/useKeyValue';
 
 function Home() {
-  const [key, setKey] = useState();
-  const [value, setValue] = useState();
+  const {
+    key, value, handleChange, handleSubmit
+  } = useKeyValue();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-
-  const handleChange = (event) => {
-    const keyValue = event.target.value;
-    const arrayKeyValue = keyValue.split(':');
-    const [searchedKey, searchedValue] = arrayKeyValue;
-
-    setKey(searchedKey);
-    setValue(searchedValue);
-  };
   return (
     <Fragment>
       <FilterInput

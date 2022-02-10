@@ -1,22 +1,24 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable no-console */
+import propTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import getLaunches from '../helpers/getLaunches';
 import LaunchCard from './LaunchCard';
 
-function ListOfLaunches() {
+function ListOfLaunches({ filterKey, filterValue }) {
   const [pastLaunches, setLaunches] = useState([]);
+
   const [loading, setLoading] = useState(false);
-  // const [key, setKet] = useState('');
-  // const [value, setValue] = useState('');
 
   useEffect(() => {
     setLoading(true);
-    getLaunches({ key: 'launch_year', value: '2018' })
+    getLaunches(filterKey, filterValue)
       .then((data) => {
         setLaunches(data);
         setLoading(false);
       });
-  }, []);
+  }, [filterKey, filterValue]);
 
   if (loading) return <h2>Loading Launches...</h2>;
 
@@ -31,21 +33,12 @@ function ListOfLaunches() {
       <ul>
         {pastLaunches.map((launch) => (
           <LaunchCard
-            key={launch.static_fire_date_unix}
-            missionName={launch.mission_name}
-            launchYear={launch.launch_year}
-            flightNumber={launch.flight_number}
-            customers={launch.rocket.second_stage.payloads
-              .map((payload) => (payload.customers
-                .map((customer) => (
-                  <li
-                    key={launch.flight_number}
-                  >
-                    {customer}
-
-                  </li>
-                ))
-              ))}
+            key={uuidv4()}
+            missionName={launch.missionName}
+            launchYear={launch.launchYear}
+            flightNumber={launch.flightNumber}
+            payloadsCount={launch.payloadsCount}
+            customers={launch.customers}
           />
         ))}
       </ul>
@@ -53,3 +46,8 @@ function ListOfLaunches() {
   );
 }
 export default ListOfLaunches;
+
+ListOfLaunches.propTypes = {
+  filterKey: propTypes.string,
+  filterValue: propTypes.string
+};

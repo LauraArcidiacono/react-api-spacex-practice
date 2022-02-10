@@ -1,4 +1,4 @@
-### lo que llega de la api
+### API response
 
 GET https://api.spacexdata.com/v3/launches/past
 Content-Type: application/json

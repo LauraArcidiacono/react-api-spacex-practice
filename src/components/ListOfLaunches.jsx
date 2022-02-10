@@ -5,20 +5,14 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import useFilter from '../hook/useFilter';
 import LaunchCard from './LaunchCard';
+import Loading from './Loading';
 
 function ListOfLaunches({ filterKey, filterValue }) {
   const { pastLaunches, loading } = useFilter(filterKey, filterValue);
 
   console.log(pastLaunches);
 
-  if (loading) {
-    return (
-      <>
-        <h2>Loading Launches...</h2>
-        <h3>Please wait</h3>
-      </>
-    );
-  }
+  if (loading) return <Loading />;
 
   return (
     <>

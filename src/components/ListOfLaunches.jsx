@@ -11,7 +11,14 @@ function ListOfLaunches({ filterKey, filterValue }) {
 
   console.log(pastLaunches);
 
-  if (loading) return <h2>Loading Launches...</h2>;
+  if (loading) {
+    return (
+      <>
+        <h2>Loading Launches...</h2>
+        <h3>Please wait</h3>
+      </>
+    );
+  }
 
   return (
     <>

@@ -1,7 +1,9 @@
 /* eslint-disable no-console */
 const getLaunches = (key = '', value = '') => {
-  const apiURL = `https://api.spacexdata.com/v3/launches/?${key}=${value}`;
-  console.log('key y  value en getLaunches', key, value);
+  let apiURL = 'https://api.spacexdata.com/v3/launches/';
+
+  apiURL += (key !== '' && value !== '') ? `?${key}=${value}` : '';
+
   return fetch(apiURL)
     .then((res) => res.json()
       .then((response) => {

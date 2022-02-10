@@ -5,15 +5,20 @@ import LaunchCard from './LaunchCard';
 
 function ListOfLaunches() {
   const [pastLaunches, setLaunches] = useState([]);
+  const [loading, setLoading] = useState(false);
   // const [key, setKet] = useState('');
   // const [value, setValue] = useState('');
 
   useEffect(() => {
+    setLoading(true);
     getLaunches({ key: 'launch_year', value: '2018' })
-      .then((data) => setLaunches(data));
+      .then((data) => {
+        setLaunches(data);
+        setLoading(false);
+      });
   }, []);
 
-  console.log('past launches on list', pastLaunches);
+  if (loading) return <h2>Loading Launches...</h2>;
 
   return (
     <>

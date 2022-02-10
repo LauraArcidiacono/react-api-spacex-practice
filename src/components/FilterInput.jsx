@@ -1,5 +1,4 @@
 /* eslint-disable react/require-default-props */
-/* eslint-disable no-console */
 import React from 'react';
 import { Fragment } from 'react/cjs/react.development';
 import PropTypes from 'prop-types';

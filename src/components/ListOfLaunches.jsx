@@ -1,5 +1,5 @@
 /* eslint-disable react/require-default-props */
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import useFilter from '../hook/useFilter';
@@ -37,6 +37,6 @@ function ListOfLaunches({ filterKey, filterValue }) {
 export default ListOfLaunches;
 
 ListOfLaunches.propTypes = {
-  filterKey: propTypes.string,
-  filterValue: propTypes.string
+  filterKey: PropTypes.string,
+  filterValue: PropTypes.string
 };

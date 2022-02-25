@@ -1,7 +1,7 @@
 import React from 'react';
 import { Fragment } from 'react/cjs/react.development';
-import FilterInput from '../components/FilterInput';
-import ListOfLaunches from '../components/ListOfLaunches';
+import FilterInput from '../components/FilterInput/FilterInput';
+import ListOfLaunches from '../components/ListOfLaunches/ListOfLaunches';
 import useKeyValue from '../hook/useKeyValue';
 
 function Home() {

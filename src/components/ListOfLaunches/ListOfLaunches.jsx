@@ -2,9 +2,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import useFilter from '../hook/useFilter';
-import LaunchCard from './LaunchCard';
-import Loading from './Loading';
+import useFilter from '../../hook/useFilter';
+import LaunchCard from '../LaunchCard/LaunchCard';
+import Loading from '../Loading/Loading';
+import './ListOfLaunches.css';
 
 function ListOfLaunches({ filterKey, filterValue }) {
   const { pastLaunches, loading } = useFilter(filterKey, filterValue);
@@ -12,10 +13,10 @@ function ListOfLaunches({ filterKey, filterValue }) {
   if (loading) return <Loading />;
 
   return (
-    <>
-      <h1>List of Past Launches</h1>
-      <p>
-        Number of Launches:
+    <section className="listOfLaunches">
+      <h1 className="listOfLaunches__title">LIST OF PAST LAUNCHES</h1>
+      <p className="listOfLaunches__count">
+        Number of Launches on your search:
         {' '}
         {pastLaunches.length}
       </p>
@@ -31,7 +32,7 @@ function ListOfLaunches({ filterKey, filterValue }) {
           />
         ))}
       </ul>
-    </>
+    </section>
   );
 }
 export default ListOfLaunches;

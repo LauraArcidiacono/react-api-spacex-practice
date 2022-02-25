@@ -1,0 +1,28 @@
+.listOfLaunches {
+    background-color: rgb(0, 2, 0);
+    background-image: url('../../assets/filterBackground.webp');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+.listOfLaunches__title {
+    color: white;
+    padding: 2rem;
+    margin: 0;
+    text-align: center;
+}
+.listOfLaunches__count{
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem;
+    margin: 0;
+}

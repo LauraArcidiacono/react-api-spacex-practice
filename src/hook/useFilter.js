@@ -10,17 +10,24 @@ const useFilter = (filterKey, filterValue) => {
     setLoading(true);
     getLaunches(filterKey, filterValue)
       .then((data) => {
+        console.log(data);
         if (filterKey === 'customers') {
-          const customerFilter = pastLaunches.filter(
+          const customerFilter = data.filter(
             (launch) => launch.customers.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1
           );
           setLaunches(customerFilter);
+        } else if (filterKey === 'mission_name') {
+          const missionNameFilter = data.filter(
+            (launch) => launch.missionName.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1
+          );
+          setLaunches(missionNameFilter);
         } else {
           setLaunches(data);
         }
         setLoading(false);
       });
-  }, [filterKey, filterValue]);
+  }, [filterValue]);
+
   return {
     pastLaunches,
     loading

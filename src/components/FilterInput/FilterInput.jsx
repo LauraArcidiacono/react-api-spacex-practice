@@ -4,13 +4,30 @@ import PropTypes from 'prop-types';
 import './FilterInput.css';
 
 function FilterInput({
-  handleChange, handleSubmit
+  handleChange, handleSubmit, handleSelect
 }) {
+  const selectOptions = [
+    { label: 'Search by', value: '' },
+    { label: 'Mision Name', value: 'mission_name' },
+    { label: 'Flight Number', value: 'flight_number' },
+    { label: 'Launch Year', value: 'launch_year' },
+    { label: 'Customers', value: 'customers' }
+  ];
+
   return (
     <section className="filterInput">
       <div className="filterInput__container">
         <h2 className="filterInput__title">Search your Launch</h2>
         <form onSubmit={handleSubmit}>
+          <select
+            name="selectKey"
+            id="selectKey"
+            onChange={handleSelect}
+          >
+            {selectOptions.map(({ value, label }) => (
+              <option value={value}>{label}</option>
+            ))}
+          </select>
           <input
             id="searchLaunch"
             name="searchLaunch"
@@ -26,12 +43,6 @@ function FilterInput({
           >
             <i className="fas fa-search" />
           </button>
-          <legend className="filterInput__legend">
-            <h4>Use a search criteria followed by a colon and your data of interest, e.g.:</h4>
-            <span>mission_name:FalconSat</span>
-            <span>launch_year:2015</span>
-            <span>customers:NASA</span>
-          </legend>
         </form>
       </div>
 
@@ -42,5 +53,6 @@ export default FilterInput;
 
 FilterInput.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  handleChange: PropTypes.func.isRequired
+  handleChange: PropTypes.func.isRequired,
+  handleSelect: PropTypes.func.isRequired
 };

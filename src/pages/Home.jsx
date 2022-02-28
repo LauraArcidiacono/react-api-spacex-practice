@@ -6,7 +6,7 @@ import useKeyValue from '../hook/useKeyValue';
 
 function Home() {
   const {
-    key, value, handleChange, handleSubmit
+    key, value, handleChange, handleSelect, handleSubmit
   } = useKeyValue();
 
   return (
@@ -14,6 +14,7 @@ function Home() {
       <FilterInput
         handleSubmit={handleSubmit}
         handleChange={handleChange}
+        handleSelect={handleSelect}
       />
       <ListOfLaunches
         filterKey={key}

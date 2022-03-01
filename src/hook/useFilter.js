@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { useState, useEffect } from 'react';
 import getLaunches from '../helpers/getLaunches';
 
@@ -24,7 +23,7 @@ const useFilter = (filterKey, filterValue) => {
       ));
     } else if (filterKey === 'flightNumber' || filterKey === 'launchYear') {
       setFilteredLaunches(pastLaunches.filter(
-        (launch) => launch[filterKey] === filterValue
+        (launch) => launch[filterKey] === filterValue || filterValue === ''
       ));
     }
   }, [filterValue]);

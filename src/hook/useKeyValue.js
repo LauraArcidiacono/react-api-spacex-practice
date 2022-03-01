@@ -9,14 +9,11 @@ const useKeyValue = () => {
   };
 
   const handleChange = (event) => {
-    console.log('key', key);
     setValue(event.target.value);
-    console.log('value', event.target.value);
   };
 
   const handleSelect = (event) => {
     setKey(event.target.value);
-    console.log('key', event.target.value);
   };
 
   return {

@@ -8,8 +8,7 @@ import Loading from '../Loading/Loading';
 import './ListOfLaunches.css';
 
 function ListOfLaunches({ filterKey, filterValue }) {
-  const { pastLaunches, loading } = useFilter(filterKey, filterValue);
-
+  const { filteredLaunches, loading } = useFilter(filterKey, filterValue);
   if (loading) return <Loading />;
 
   return (
@@ -18,10 +17,10 @@ function ListOfLaunches({ filterKey, filterValue }) {
       <p className="listOfLaunches__count">
         Number of Launches on your search:
         {' '}
-        {pastLaunches.length}
+        {filteredLaunches.length}
       </p>
       <ul>
-        {pastLaunches.map((launch) => (
+        {filteredLaunches.map((launch) => (
           <LaunchCard
             key={uuidv4()}
             missionName={launch.missionName}

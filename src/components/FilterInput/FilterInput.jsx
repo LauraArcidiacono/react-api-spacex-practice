@@ -8,9 +8,9 @@ function FilterInput({
 }) {
   const selectOptions = [
     { label: 'Search by', value: '' },
-    { label: 'Mision Name', value: 'mission_name' },
-    { label: 'Flight Number', value: 'flight_number' },
-    { label: 'Launch Year', value: 'launch_year' },
+    { label: 'Mision Name', value: 'missionName' },
+    { label: 'Flight Number', value: 'flightNumber' },
+    { label: 'Launch Year', value: 'launchYear' },
     { label: 'Customers', value: 'customers' }
   ];
 

@@ -9,7 +9,6 @@ import './ListOfLaunches.css';
 
 function ListOfLaunches({ filterKey, filterValue }) {
   const { filteredLaunches, loading } = useFilter(filterKey, filterValue);
-  console.log('filteredLaunches', filteredLaunches);
   if (loading) return <Loading />;
 
   return (

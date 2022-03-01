@@ -7,11 +7,11 @@ function FilterInput({
   handleChange, handleSubmit, handleSelect
 }) {
   const selectOptions = [
-    { label: 'Search by', value: '' },
-    { label: 'Mision Name', value: 'missionName' },
-    { label: 'Flight Number', value: 'flightNumber' },
-    { label: 'Launch Year', value: 'launchYear' },
-    { label: 'Customers', value: 'customers' }
+    { label: 'Search by', value: '', key: 1 },
+    { label: 'Mision Name', value: 'missionName', key: 2 },
+    { label: 'Flight Number', value: 'flightNumber', key: 3 },
+    { label: 'Launch Year', value: 'launchYear', key: 4 },
+    { label: 'Customers', value: 'customers', key: 5 }
   ];
 
   return (
@@ -24,8 +24,14 @@ function FilterInput({
             id="selectKey"
             onChange={handleSelect}
           >
-            {selectOptions.map(({ value, label }) => (
-              <option value={value}>{label}</option>
+            {selectOptions.map(({ value, label, key }) => (
+              <option
+                key={key}
+                value={value}
+              >
+                {label}
+
+              </option>
             ))}
           </select>
           <input

@@ -23,6 +23,7 @@ function FilterInput({
             name="selectKey"
             id="selectKey"
             onChange={handleSelect}
+            className="filterInput__select"
           >
             {selectOptions.map(({ value, label, key }) => (
               <option

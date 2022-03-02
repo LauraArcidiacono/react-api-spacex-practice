@@ -1,5 +1,4 @@
 import React from 'react';
-import { Fragment } from 'react/cjs/react.development';
 import FilterInput from '../components/FilterInput/FilterInput';
 import ListOfLaunches from '../components/ListOfLaunches/ListOfLaunches';
 import useKeyValue from '../hook/useKeyValue';
@@ -10,7 +9,7 @@ function Home() {
   } = useKeyValue();
 
   return (
-    <Fragment>
+    <>
       <FilterInput
         handleSubmit={handleSubmit}
         handleChange={handleChange}
@@ -20,7 +19,7 @@ function Home() {
         filterKey={key}
         filterValue={value}
       />
-    </Fragment>
+    </>
   );
 }
 export default Home;

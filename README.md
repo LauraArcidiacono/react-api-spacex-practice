@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# PRACTICE WITH REACT AND SPACEX API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The application allows to access SpaceX launch information and filter them according to different parameters.
+
+Application developed in ReactJS.
+Connection with SpaceX API.
+BEM architecture.
+Use of react-dom, react-router-dom, hooks, custom hooks and propTypes.
+EsLint.
+
+## Despliegue continuo a través de Cloudfare
+
+### Link
+
+[SpaceX Search Launches](https://spacex-react-laura-arcidiacono.pages.dev/)
 
 ## Available Scripts
 
